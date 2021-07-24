@@ -3,13 +3,18 @@
     "name": "DivCounter",
     "version": "0.1",
     "description": "A simple div counter",
+    "homepage_url": "https://github.com/Fimeo/divcounter",
     "icons": {
         "48": "icons/counter.png"
     },
-    "content_scripts": [
-        {
-            "matches": ["<all_urls>"],
-            "js": ["divcounter.js"]
-        }
+    "permissions": [
+        "activeTab"
+    ],
+    "browser_action": {
+        "default_icon": "icons/counter-32.png",
+        "default_title": "DivCounter",
+        "default_popup": "popup/div_counter.html"
+    },
+    "web_accessible_ressources": [
     ]
 }
