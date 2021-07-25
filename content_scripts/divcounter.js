@@ -10,10 +10,26 @@
     window.hasRun = true;
 
     function getHTMLElementsStats() {
-        return {
-            all: document.querySelectorAll('*').length,
-            div: document.querySelectorAll('div').length
-        }
+        const nodeList = document.querySelectorAll('*')
+        const HTMLNodeNames = new Set([...nodeList].map(i => i.nodeName))
+
+        let payload = {}
+        payload.all = nodeList.length;
+        payload.mapNodeNames = [...HTMLNodeNames].map(function (i) {
+            return {
+                number: document.querySelectorAll(i).length,
+                name: i.toLowerCase()
+            }
+        }).sort(function (a, b) {
+            if (a.number > b.number) {
+                return -1
+            }
+            if (a.number < b.number) {
+                return 1;
+            }
+            return 0
+        })
+        return payload;
     }
 
     /**

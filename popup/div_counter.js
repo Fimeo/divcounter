@@ -16,10 +16,25 @@ function reportExecuteScriptError(error) {
 function makeStats(tabs) {
     browser.tabs.sendMessage(tabs[0].id, {
         command: 'stats'
-    }).then(response => {
-        document.querySelector('#divs').innerHTML = response.div
-        document.querySelector('#total').innerHTML = response.all
-    }).catch(reportExecuteScriptError)
+    }).then(payload => {
+        showReport(payload)
+    })
+}
+
+function showReport(payload) {
+    document.querySelector('#total').innerHTML = payload.all
+    let statFragment = document.createDocumentFragment()
+    for (let node of payload.mapNodeNames) {
+        let p = document.createElement('p')
+        p.appendChild(document.createTextNode('Number of ' + node.name + ' : '))
+        let span = document.createElement('span')
+        span.className = 'statNumber'
+        span.textContent = node.number
+        p.appendChild(span)
+        statFragment.appendChild(p)
+    }
+    document.querySelector('#stats').innerHTML = ''
+    document.querySelector('#stats').appendChild(statFragment);
 }
 
 /**
@@ -41,10 +56,9 @@ document.addEventListener('click', e => {
  * If we couldn't inject the script, handle the error.
  */
 browser.tabs.executeScript({file: "/content_scripts/divcounter.js"})
-    .then()
-    .catch(reportExecuteScriptError);
-
-browser.tabs.query({
-    active: true,
-    currentWindow: true
-}).then(makeStats)
+    .then(() => {
+        browser.tabs.query({
+            active: true,
+            currentWindow: true
+        }).then(makeStats)
+    })

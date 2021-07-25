@@ -5,7 +5,9 @@
 }
 
 html, body {
-    width: 300px;
+    width: 400px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
 }
 
 #popup-content {
@@ -17,7 +19,7 @@ html, body {
 }
 
 .button {
-    margin: 3% auto;
+    margin: 0 auto;
     padding: 4px;
     text-align: center;
     cursor: pointer;

@@ -11,6 +11,10 @@ DivCounter is designed to meet the needs of customers with low performance. The 
 
 ----
 
+### V0.1.1 :
+
+* Adding all html tags of current page
+
 ### V0.1.0 :
 
 * Simple report on the number of div tags and total DOM elements
@@ -19,7 +23,6 @@ DivCounter is designed to meet the needs of customers with low performance. The 
 
 ### Next releases :
 
-* Adding all the HTML tags of the standard library
 * Creation of a more detailed report
 * Integration of a visual design
 * Number of dead tags (without content)
