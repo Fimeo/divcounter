@@ -1,3 +1,6 @@
+/**
+ * Content script : executed into web page
+ */
 (function() {
     /**
      * Check and set a global guard variable.

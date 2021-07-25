@@ -23,18 +23,22 @@ function makeStats(tabs) {
 
 function showReport(payload) {
     document.querySelector('#total').innerHTML = payload.all
-    let statFragment = document.createDocumentFragment()
+    let table = document.querySelector('#table')
+    table.innerHTML = ''
     for (let node of payload.mapNodeNames) {
-        let p = document.createElement('p')
-        p.appendChild(document.createTextNode('Number of ' + node.name + ' : '))
-        let span = document.createElement('span')
-        span.className = 'statNumber'
-        span.textContent = node.number
-        p.appendChild(span)
-        statFragment.appendChild(p)
+        table.appendChild(createStatItem(node.name, node.number))
     }
-    document.querySelector('#stats').innerHTML = ''
-    document.querySelector('#stats').appendChild(statFragment);
+}
+
+function createStatItem(name, number) {
+    let tr = document.createElement('tr')
+    let tdName = document.createElement('td')
+    let tdValue = document.createElement('td')
+    tdName.innerText = name
+    tdValue.innerText = number
+    tr.appendChild(tdName)
+    tr.appendChild(tdValue)
+    return tr
 }
 
 /**

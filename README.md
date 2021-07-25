@@ -14,6 +14,7 @@ DivCounter is designed to meet the needs of customers with low performance. The 
 ### V0.1.1 :
 
 * Adding all html tags of current page
+* Base CSS Style
 
 ### V0.1.0 :
 

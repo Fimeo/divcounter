@@ -4,10 +4,13 @@
     box-sizing: border-box;
 }
 
+html, body, #popup-content, #error-content {
+    min-width: 400px;
+}
+
 html, body {
-    width: 400px;
-    text-overflow: ellipsis;
-    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 #popup-content {
@@ -18,14 +21,105 @@ html, body {
     display: none;
 }
 
-.button {
-    margin: 0 auto;
-    padding: 4px;
-    text-align: center;
-    cursor: pointer;
+header {
+    background-image: linear-gradient( to top right, #5129df, #ce5f07 );
+    color: white;
 }
 
-span {
-    color: salmon;
-    font-weight: bold;
+.header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    flex: 1;
+    padding-left: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.title img {
+    height: 35px;
+}
+
+h1 {
+    font-size: 12px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-right: 15px;
+}
+
+.reload-action {
+    padding: 3px;
+}
+
+.button {
+    cursor: pointer;
+    background-color: white;
+    border-radius: 20%;
+    opacity: 0.5;
+    transition: .3s;
+}
+
+.button:hover {
+    opacity: 0.8;
+    transition: .3s;
+}
+
+.actions img {
+    height: 30px;
+    padding: 3px;
+}
+
+.stats {
+    margin-top: 10px;
+}
+
+.summary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.summary .total {
+    width: 20%;
+    box-shadow: 11px 17px 35px -7px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 2px;
+}
+
+#grid {
+    margin-top: 10px;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+tr {
+    display: flex;
+    width: 100%;
+    padding: 5px 0;
+}
+
+tr:nth-of-type(odd) {
+     background: #e2e2e2;
+}
+
+td {
+    flex: 1 1 20%;
+    text-align:center;
 }

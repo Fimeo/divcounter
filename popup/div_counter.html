@@ -6,12 +6,41 @@
 </head>
 <body>
     <div id="popup-content">
-        <div class="button reload">Reload</div>
-        <p>Total DOM Elements : <span id="total">0</span></p>
-        <div id="stats"></div>
+        <header>
+            <div class="header-content">
+                <div class="title">
+                    <img src="../icons/counter-white.png" alt="Logo divcounter">
+                    <h1>DivCounter</h1>
+                </div>
+                <div class="actions">
+                    <div class="reload-action">
+                        <div class="button reload">
+                            <img src="../icons/refresh.png" alt="Refresh">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="stats">
+                <div class="summary">
+                    <div class="total">
+                        <small>Total</small>
+                        <div class="icon">
+                            <img src="../icons/html5.png" alt="">
+                        </div>
+                        <p id="total"></p>
+                    </div>
+                </div>
+                <div id="grid">
+                    <table id="table"></table>
+                </div>
+            </div>
+        </main>
     </div>
     <div id="error-content" class="hidden">
         <p>Can't run divcounter on this page</p>
+        <p>Please make an issue on github</p>
     </div>
     <script src="div_counter.js"></script>
 </body>
