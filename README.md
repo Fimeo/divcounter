@@ -13,14 +13,14 @@ DivCounter is designed to meet the needs of customers with low performance. The 
 
 ### V0.1.0 :
 
-Simple report on the number of div tags
-Creation of a simplistic interface
+* Simple report on the number of div tags and total DOM elements
+* Creation of a simplistic interface
+* Update data on demand
 
 ### Next releases :
 
 * Adding all the HTML tags of the standard library
 * Creation of a more detailed report
-* Update data on demand
 * Integration of a visual design
 * Number of dead tags (without content)
 * Level of nesting of tags with a single thread
@@ -29,6 +29,3 @@ Creation of a simplistic interface
 ----
 
 For any contribution to this extension, please open an issue or run a merge request
-
-Some webextension documentation :
-https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions

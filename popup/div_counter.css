@@ -22,3 +22,8 @@ html, body {
     text-align: center;
     cursor: pointer;
 }
+
+span {
+    color: salmon;
+    font-weight: bold;
+}

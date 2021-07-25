@@ -9,18 +9,23 @@
     }
     window.hasRun = true;
 
-    function reload() {
-        console.log('reloaded')
+    function getHTMLElementsStats() {
+        return {
+            all: document.querySelectorAll('*').length,
+            div: document.querySelectorAll('div').length
+        }
     }
 
     /**
      * Listen for messages from the background script.
      * Call "reload()".
      */
-    browser.runtime.onMessage.addListener((message) => {
-        if (message.command === "reload") {
-            reload();
+    browser.runtime.onMessage.addListener( request => {
+        switch (request.command) {
+            case 'stats':
+                return Promise.resolve(getHTMLElementsStats())
+            default:
+                return Promise.reject()
         }
-    });
-
+    })
 })();
