@@ -44,14 +44,11 @@ function createStatItem(name, number) {
 /**
  * Reload action : update stats
  */
-document.addEventListener('click', e => {
-
-    if (e.target.classList.contains('reload')) {
-        browser.tabs.query({
-            active: true,
-            currentWindow: true
-        }).then(makeStats)
-    }
+document.querySelector('#reload').addEventListener('click', e => {
+    browser.tabs.query({
+        active: true,
+        currentWindow: true
+    }).then(makeStats)
 })
 
 /**
